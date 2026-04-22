@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+@theme {
+  --font-sans: 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  --color-brand-gold: #eab308;
+  --color-brand-blue: #1d4ed8;
+  --color-brand-gold-glow: rgba(250, 204, 21, 0.5);
+  
+  --perspective-1000: 1000px;
+  
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes shimmer {
+    from { background-position: 0 0; }
+    to { background-position: -200% 0; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#020617] text-[#f8fafc] antialiased min-h-screen selection:bg-yellow-400 selection:text-black;
+  }
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gold-glow {
+  text-shadow: none;
+}
+
+.blue-glow {
+  box-shadow: none;
+}
+
+.house-bg-gradient {
+  background: radial-gradient(circle at 70% 30%, rgba(250, 204, 21, 0.1) 0%, transparent 60%);
+}
+
+.shimmer-btn {
+  background: linear-gradient(
+    90deg,
+    #eab308 0%,
+    #facc15 50%,
+    #eab308 100%
+  );
+  background-size: 200% auto;
+}
+
+.step-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.3), transparent);
+  z-index: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: #eab308;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
